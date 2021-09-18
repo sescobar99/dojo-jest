@@ -43,11 +43,20 @@ describe('Combinations', () => {
         expect(codebreaker.guess(1324)).toBe('XX--');
     });
 
-    
-    // XX--
-    // X---
-    // XX-
-    // X--
+    test('1 right place 3 wrong place -interspersed- ("X---")', () => {
+        expect(codebreaker.guess(1423)).toBe('X---');
+    });
+
+    test('2 right place 1 wrong place ("XX-")', () => {
+        expect(codebreaker.guess(1245)).toBe('XX-');
+    });
+    test('1 right place 2 wrong place -interspersed- ("X--")', () => {
+        expect(codebreaker.guess(2135)).toBe('X--');
+    });
+
+    test('1 right place 1 wrong place ("X-")', () => {
+        expect(codebreaker.guess(1378)).toBe('X-');
+    });
     // X-
     
 
