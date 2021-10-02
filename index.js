@@ -18,7 +18,7 @@ app.get('/try/p', function (req, res) {
     res.send(result);
 });
 
-app.post('/new-number/p', function (req, res) {
+app.get('/new-number/p', function (req, res) {
     digits = req.query.digits;
     number = '';
     for (let index = 0; index < digits; index++) {
