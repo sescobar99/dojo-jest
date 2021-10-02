@@ -1,5 +1,4 @@
-function guess(number) {
-    original_number = 1234;
+function guess(number, original_number = 1234) {
     original_digits = original_number.toString().split('');
     guessed_digits = number.toString().split('');
     return_value_x = '';
