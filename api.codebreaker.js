@@ -1,18 +1,18 @@
 const express = require("express");
 var cors = require('cors')
 const bodyParser = require('body-parser');
-const { guess } = require("./codebreaker");
+const api = require("./codebreaker");
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
 app.use(cors());
 
 number_to_guess = 1234;
 
 app.get('/try/p', function (req, res) {
     result = {
-        string: guess(req.query.input, number_to_guess)
+        string: api.guess(req.query.input, number_to_guess)
     }
 
     res.send(result);
@@ -33,8 +33,4 @@ app.get('/new-number/p', function (req, res) {
 
 });
 
-
-
-app.listen(3000, () => {
-    console.log("El servidor está inicializado en el puerto 3000");
-});
+module.exports = app;
