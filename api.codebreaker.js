@@ -29,7 +29,10 @@ app.get('/new-number/p', function (req, res) {
     old_number = number_to_guess;
     number_to_guess = number;
 
-    res.send(old_number + ' changed to ' + number_to_guess);
+    result = {
+        new_number : number_to_guess
+    }
+    res.send(result);
 
 });
 
